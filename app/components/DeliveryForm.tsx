@@ -14,7 +14,7 @@ const DeliveryForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     cartValue: 0,
     deliveryDistance: 0,
-    amountOfItems: 0,
+    amountOfItems: 1,
     time: new Date(),
   });
   const [deliveryPrice, setDeliveryPrice] = useState<number | null>(null);
@@ -99,6 +99,7 @@ const DeliveryForm: React.FC = () => {
             type="number"
             placeholder="Cart Value"
             name="cartValue"
+            min="0" 
             value={formData.cartValue}
             onChange={handleChange}
           />
@@ -113,6 +114,7 @@ const DeliveryForm: React.FC = () => {
             type="number"
             placeholder="Delivery Distance"
             name="deliveryDistance"
+            min="0" 
             value={formData.deliveryDistance}
             onChange={handleChange}
           />
@@ -128,6 +130,7 @@ const DeliveryForm: React.FC = () => {
             placeholder="Amount of Items"
             name="amountOfItems"
             value={formData.amountOfItems}
+            min="1" 
             onChange={handleChange}
           />
         </div>
